@@ -2,6 +2,10 @@
 export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
   devtools: { enabled: true },
+  ssr: false,
+  nitro: {
+    preset: "static",
+  },
 
   modules: ["@storyblok/nuxt", "@nuxtjs/tailwindcss", "@nuxt/fonts"],
 
