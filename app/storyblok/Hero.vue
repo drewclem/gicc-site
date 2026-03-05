@@ -19,7 +19,7 @@ const { elementRef, isVisible } = useScrollAnimation();
   >
     <UiStack>
       <UiTypography as="p" class="opacity-75 uppercase tracking-widest">
-        St. Simons• Jekyll • Brunswick
+        St. Simons • Jekyll • Brunswick
       </UiTypography>
       <UiPageHeading>
         {{ blok.heading }}
