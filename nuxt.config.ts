@@ -1,34 +1,44 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  compatibilityDate: '2025-07-15',
+  compatibilityDate: "2025-07-15",
   devtools: { enabled: true },
 
-  modules: [
-    '@storyblok/nuxt',
-    '@nuxtjs/tailwindcss',
-  ],
+  modules: ["@storyblok/nuxt", "@nuxtjs/tailwindcss", "@nuxt/fonts"],
 
-  css: ['~/assets/css/main.css'],
+  css: ["~/assets/css/main.css"],
+
+  fonts: {
+    families: [
+      {
+        name: "Outfit",
+        provider: "google",
+        weights: [400, 500, 700],
+      },
+      {
+        name: "DIN Condensed",
+        provider: "local",
+        weights: [400, 500, 700],
+      },
+    ],
+  },
 
   storyblok: {
     accessToken: process.env.STORYBLOK_ACCESS_TOKEN,
     bridge: true,
     devtools: true,
     apiOptions: {
-      region: 'us', // Change to 'eu' if your space is in Europe
+      region: "eu",
     },
   },
 
   components: {
-    dirs: [
-      '~/components',
-      { path: '~/storyblok', global: true },
-    ],
+    dirs: ["~/components", { path: "~/storyblok", global: true }],
   },
 
   runtimeConfig: {
     public: {
-      storyblokVersion: process.env.STORYBLOK_VERSION || 'draft',
+      siteName: "Golden Isles Chess Club",
+      storyblokVersion: process.env.STORYBLOK_VERSION || "draft",
     },
   },
-})
+});

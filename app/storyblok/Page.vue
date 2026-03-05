@@ -1,13 +1,13 @@
 <script setup lang="ts">
 defineProps<{
   blok: {
-    body: any[]
-  }
-}>()
+    body: any[];
+  };
+}>();
 </script>
 
 <template>
-  <div v-editable="blok" class="min-h-screen">
+  <div v-editable="blok">
     <StoryblokComponent
       v-for="nestedBlok in blok.body"
       :key="nestedBlok._uid"
