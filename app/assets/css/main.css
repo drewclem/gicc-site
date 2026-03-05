@@ -168,3 +168,24 @@ h6 {
 .nav-link.router-link-active::after {
   width: 100%;
 }
+
+/* Mobile slideout menu */
+.slideout-enter-active,
+.slideout-leave-active {
+  transition: opacity 0.3s ease;
+}
+
+.slideout-enter-active > div:last-child,
+.slideout-leave-active > div:last-child {
+  transition: transform 0.3s ease;
+}
+
+.slideout-enter-from,
+.slideout-leave-to {
+  opacity: 0;
+}
+
+.slideout-enter-from > div:last-child,
+.slideout-leave-to > div:last-child {
+  transform: translateX(100%);
+}

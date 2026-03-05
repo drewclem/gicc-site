@@ -14,7 +14,7 @@ const { elementRef, isVisible } = useScrollAnimation();
   <div
     ref="elementRef"
     v-editable="blok"
-    class="pt-24 scroll-reveal"
+    class="pt-12 lg:pt-24 scroll-reveal"
     :class="{ 'is-visible': isVisible }"
   >
     <UiPageHeading>
