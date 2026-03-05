@@ -27,6 +27,12 @@
   font-display: swap;
 }
 
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 body {
   @apply text-primary overflow-x-hidden;
   font-family: "Outfit", sans-serif;
