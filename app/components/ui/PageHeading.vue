@@ -5,6 +5,9 @@
     ></div>
     <UiTypography as="h1" variant="billboard">
       <slot />
+      <span class="text-accent" v-if="$slots.accentHeadingText">
+        <slot name="accentHeadingText" />
+      </span>
     </UiTypography>
   </div>
 </template>

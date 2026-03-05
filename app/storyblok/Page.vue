@@ -8,10 +8,12 @@ defineProps<{
 
 <template>
   <div v-editable="blok">
-    <StoryblokComponent
-      v-for="nestedBlok in blok.body"
-      :key="nestedBlok._uid"
-      :blok="nestedBlok"
-    />
+    <UiStack>
+      <StoryblokComponent
+        v-for="nestedBlok in blok.body"
+        :key="nestedBlok._uid"
+        :blok="nestedBlok"
+      />
+    </UiStack>
   </div>
 </template>

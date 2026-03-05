@@ -5,10 +5,17 @@ defineProps<{
     features: any[]
   }
 }>()
+
+const { elementRef, isVisible } = useScrollAnimation();
 </script>
 
 <template>
-  <section v-editable="blok" class="px-4 py-16 sm:py-24">
+  <section
+    ref="elementRef"
+    v-editable="blok"
+    class="px-4 py-16 sm:py-24 scroll-reveal"
+    :class="{ 'is-visible': isVisible }"
+  >
     <div class="mx-auto max-w-6xl">
       <h2
         v-if="blok.title"

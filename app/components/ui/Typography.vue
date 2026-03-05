@@ -74,13 +74,13 @@ const typographyClasses = computed(() => {
       baseClasses.push("text-base");
       break;
     case "label-small":
-      baseClasses.push("text-xs font-medium");
+      baseClasses.push("text-xs   uppercase tracking-widest");
       break;
     case "label":
-      baseClasses.push("text-sm font-medium");
+      baseClasses.push("text-sm uppercase tracking-widest");
       break;
     case "label-large":
-      baseClasses.push("text-base font-medium");
+      baseClasses.push("text-base uppercase tracking-widest");
       break;
     case "button":
       baseClasses.push("text-sm font-medium");

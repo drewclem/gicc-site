@@ -5,10 +5,17 @@ defineProps<{
     text: string;
   };
 }>();
+
+const { elementRef, isVisible } = useScrollAnimation();
 </script>
 
 <template>
-  <div v-editable="blok">
+  <div
+    ref="elementRef"
+    v-editable="blok"
+    class="scroll-reveal"
+    :class="{ 'is-visible': isVisible }"
+  >
     <UiStack>
       <div class="flex gap-4 items-center">
         <UiTypography

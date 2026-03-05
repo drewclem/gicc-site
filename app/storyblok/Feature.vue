@@ -6,12 +6,16 @@ defineProps<{
     icon?: string
   }
 }>()
+
+const { elementRef, isVisible } = useScrollAnimation();
 </script>
 
 <template>
   <div
+    ref="elementRef"
     v-editable="blok"
-    class="rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
+    class="rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md scroll-reveal"
+    :class="{ 'is-visible': isVisible }"
   >
     <div
       v-if="blok.icon"

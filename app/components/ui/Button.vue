@@ -1,9 +1,16 @@
 <script setup lang="ts">
-const props = defineProps<{
-  variant?: "primary" | "secondary";
-  size?: "sm" | "md" | "lg";
-  href?: string;
-}>();
+const props = withDefaults(
+  defineProps<{
+    variant?: "primary" | "secondary";
+    href?: string;
+    disabled?: boolean;
+  }>(),
+  {
+    variant: "primary",
+    size: "md",
+    disabled: false,
+  },
+);
 
 const buttonClasses = computed(() => {
   return [
@@ -13,12 +20,18 @@ const buttonClasses = computed(() => {
       "!border-accent text-primary hover:bg-accent/25":
         props.variant === "secondary",
     },
+    { "opacity-50 pointer-events-none": props.disabled },
   ];
 });
 </script>
 
 <template>
-  <component :is="href ? 'a' : 'button'" :href="href" :class="buttonClasses"
-    ><slot
-  /></component>
+  <component
+    :is="href ? 'a' : 'button'"
+    :href="href"
+    :class="buttonClasses"
+    :disabled
+  >
+    <slot />
+  </component>
 </template>
