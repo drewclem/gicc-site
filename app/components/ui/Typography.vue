@@ -44,7 +44,7 @@ const typographyClasses = computed(() => {
 
   switch (props.variant) {
     case "billboard":
-      baseClasses.push("text-3xl lg:text-[72px] leading-none");
+      baseClasses.push("text-5xl lg:text-[72px] leading-none");
       break;
     case "h1":
       baseClasses.push("text-2xl lg:text-3xl leading-none font-medium");
